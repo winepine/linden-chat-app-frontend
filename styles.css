@@ -1,0 +1,44 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+#messages {
+  max-height: 300px;
+  min-height: 300px;
+  overflow: auto;
+  border-radius: 10px;
+
+  border: 1px solid #ccc;
+  width: 80%;
+}
+#chat-buttons {
+  display: flex;
+  margin-top: 10px;
+}
+#message-text {
+  margin-top: 10px;
+  padding: 6px;
+  border-radius: 10px;
+  width: 300px;
+}
+#left {
+  padding: 15px;
+  margin: 5px;
+  border: 1px solid #bbb;
+  max-width: 60%;
+  border-radius: 10px;
+  float: left;
+  clear: both;
+}
+#right {
+  padding: 15px;
+  margin: 5px;
+  border: 1px solid #bbb;
+  max-width: 60%;
+  border-radius: 10px;
+  float: right;
+  clear: both;
+}

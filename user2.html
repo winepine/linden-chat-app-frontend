@@ -9,19 +9,19 @@
   <body>
     <div id="container">
       <h2>Chat App</h2>
-      <div id="messages">
-        <div id="left">kansdandkls</div>
-        <div id="right">kansdandkls</div>
-        <div id="left">kansdandkls</div>
-      </div>
+      <div id="messages"></div>
       <div>
         <input type="text" id="message-text" />
       </div>
       <div id="chat-buttons">
-        <button>Send</button>
+        <button onclick="sendMessage()">Send</button>
         <button onclick="fetchMessages()">Refresh</button>
+        <button disabled>block</button>
       </div>
     </div>
   </body>
+  <script>
+    let user = "uid2";
+  </script>
   <script src="./script.js"></script>
 </html>

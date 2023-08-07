@@ -1,4 +1,3 @@
-let uuid = 125;
 let AllChats = [];
 let selectedId;
 let selectedChat;
@@ -114,10 +113,19 @@ const getChats = async () => {
     </div>
   </div>
   `;
+  AllChats.sort((a, b) => {
+    const aTime =
+      new Date(a.messages[a.messages.length - 1]?.timeStamp) || Date.now();
+    const bTime =
+      new Date(b.messages[b.messages.length - 1]?.timeStamp) || Date.now();
+    return bTime - aTime;
+  });
   AllChats.forEach(chat => {
     let user = chat.uid1 == uuid ? chat.uid2 : chat.uid1;
-    const lastMessage = chat.messages[chat.messages.length - 1].message;
-    let timeAgo = chat.messages[chat.messages.length - 1].timeStamp;
+    const lastMessage =
+      chat.messages[chat.messages.length - 1]?.message || "Start Chatting...";
+    let timeAgo =
+      chat.messages[chat.messages.length - 1]?.timeStamp || Date.now();
     const givenDate = new Date(timeAgo);
     const currentDate = new Date();
     const timeDifferenceMs = currentDate - givenDate;

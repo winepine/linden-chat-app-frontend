@@ -25,7 +25,8 @@ const switchChats = chatId => {
   const chat = AllChats.find(chat => chat.id === chatId.id);
   selectedChat = chat;
   ourUser = chat.uid1 === uuid ? "uid1" : "uid2";
-  document.getElementById("chat-user").innerText = chat[ourUser];
+  let otherUser = chat.uid1 === uuid ? "uid2" : "uid1";
+  document.getElementById("chat-user").innerText = chat[otherUser];
 
   const messagesContainer = document.getElementById("messages-chat");
   messagesContainer.innerHTML = "";
@@ -37,7 +38,7 @@ const switchChats = chatId => {
     const currentDate = new Date();
     const timeDifferenceMs = currentDate - givenDate;
     const timeDifferenceString = formatTimeDifference(timeDifferenceMs);
-    if (message.sender === ourUser) {
+    if (message.sender !== ourUser) {
       messageBox = `
         <div class="message">
           <div
